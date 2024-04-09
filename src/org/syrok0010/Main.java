@@ -18,11 +18,11 @@ public class Main {
         System.out.print(
                 lastName + ' ' + name.charAt(0) + '.' + middleName.charAt(0) + '.' + '\n' +
                 "Пол: " + (middleName.endsWith("на") ? "женский" : "мужской") + '\n' +
-                "Возраст: " + getValidAgeString(Period.between(dateOfBirth, LocalDate.now()).getYears())
+                "Возраст: " + getAgeString(Period.between(dateOfBirth, LocalDate.now()).getYears())
         );
     }
 
-    private static String getValidAgeString(int age) {
+    private static String getAgeString(int age) {
         if (age >= 10 && age <= 20) return age + " лет";
         return switch (age % 10) {
             case 1 -> age + " год";
